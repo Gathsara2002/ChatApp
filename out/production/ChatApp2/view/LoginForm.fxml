@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="loginAp" prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.LoginFormController">
+    <children>
+        <Label layoutX="484.0" layoutY="547.0" text="Play Tech Pvt Ltd ">
+            <font>
+                <Font name="Bell MT" size="24.0"/>
+            </font>
+        </Label>
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="173.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <image>
+                <Image url="@../assets/profile.png"/>
+            </image>
+        </ImageView>
+        <TextField fx:id="txtUserName" layoutX="109.0" layoutY="427.0" prefHeight="35.0" prefWidth="300.0"
+                   promptText="UserName">
+            <font>
+                <Font size="15.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="280.0" layoutY="34.0" text="Chat Room" textFill="#0e6ebc">
+            <font>
+                <Font name="Californian FB Bold" size="32.0"/>
+            </font>
+        </Label>
+        <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="470.0" layoutY="427.0" onAction="#btnLoginOnAction"
+                   prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #3498db;" text="Login"
+                   textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="20.0"/>
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND"/>
+            </cursor>
+        </JFXButton>
+    </children>
+</AnchorPane>
