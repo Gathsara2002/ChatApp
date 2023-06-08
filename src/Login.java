@@ -23,7 +23,7 @@ public class Login extends Application {
         Scene scene = new Scene(load);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Login Form");
+        //primaryStage.setTitle("Login Form");
         primaryStage.centerOnScreen();
         primaryStage.show();
     }

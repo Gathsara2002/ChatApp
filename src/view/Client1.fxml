@@ -28,7 +28,7 @@
         </JFXButton>
         <ImageView fitHeight="402.0" fitWidth="449.0" layoutX="159.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../assets/img.png" />
+                <Image url="@/assets/img.png" />
             </image>
         </ImageView>
         <TextArea fx:id="txtChat" layoutX="35.0" layoutY="82.0" opacity="0.75" prefHeight="426.0" prefWidth="634.0">

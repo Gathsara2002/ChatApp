@@ -22,7 +22,7 @@
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="275.0" layoutY="173.0" pickOnBounds="true"
                    preserveRatio="true">
             <image>
-                <Image url="@../assets/profile.png"/>
+                <Image url="@/assets/profile.png"/>
             </image>
         </ImageView>
         <TextField fx:id="txtUserName" layoutX="109.0" layoutY="427.0" prefHeight="35.0" prefWidth="300.0"
