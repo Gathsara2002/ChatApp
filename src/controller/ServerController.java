@@ -44,7 +44,7 @@ public class ServerController {
     String massage1 = "", massage2 = "", massage3 = "";
 
     /*store client's massages separately*/
-    String chat1 = "server connected", chat2 = "server connected", chat3 = "";
+    String chat1 = "server connected", chat2 = "server connected", chat3 = "server connected";
 
     public void txtMsg(ActionEvent actionEvent) {
     }
@@ -101,6 +101,7 @@ public class ServerController {
 
         new Thread(() -> {
             try {
+
                 serverSocket2 = new ServerSocket(Port2);
                 localSocket2 = serverSocket2.accept();
                 txtChat.appendText("\n Client 2 accepted");
@@ -124,6 +125,42 @@ public class ServerController {
                     /*send massage to client 3*/
                     dataOutputStream3.writeUTF("\n client 2 : " + chat2.trim());
                     dataOutputStream3.flush();
+
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
+
+        /*client 3 data transfer*/
+
+        new Thread(() -> {
+            try {
+
+                serverSocket3 = new ServerSocket(Port3);
+                localSocket3 = serverSocket3.accept();
+                txtChat.appendText("\n Client 3 accepted");
+
+                dataInputStream3 = new DataInputStream(localSocket3.getInputStream());
+                dataOutputStream3 = new DataOutputStream(localSocket3.getOutputStream());
+
+                while (!massage3.equals("exit")) {
+
+                    /*get client 3 massage to server*/
+                    massage3 = dataInputStream3.readUTF();
+                    txtChat.appendText("\n Client 3 : " + massage3.trim());
+
+                    /*store massage to another variable*/
+                    chat3 = massage3;
+
+                    /*send massage to client 1*/
+                    dataOutputStream1.writeUTF("\n client 3 : " + chat3.trim());
+                    dataOutputStream1.flush();
+
+                    /*send massage to client 2*/
+                    dataOutputStream2.writeUTF("\n client 3 : " + chat3.trim());
+                    dataOutputStream2.flush();
 
                 }
 

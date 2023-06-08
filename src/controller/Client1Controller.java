@@ -50,7 +50,7 @@ public class Client1Controller {
                 /*get massages from server*/
                 while (!massage.equals("exit")) {
                     massage = dataInputStream.readUTF();
-                    txtChat.appendText("\n Server : " + massage);
+                    txtChat.appendText(massage);
                 }
 
                 /*close streams*/

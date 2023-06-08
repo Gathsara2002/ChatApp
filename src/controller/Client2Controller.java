@@ -20,7 +20,7 @@ public class Client2Controller {
     public TextField txtMsgField;
     public TextArea txtChat;
 
-    /*remote socket for client 1*/
+    /*remote socket for client 2*/
     Socket socket2;
 
     /*dataInputStream and dataOutputStream for streaming data */
@@ -39,6 +39,7 @@ public class Client2Controller {
     }
 
     public void initialize() {
+
         new Thread(() -> {
 
             try {
@@ -50,7 +51,7 @@ public class Client2Controller {
                 /*get massages from server*/
                 while (!massage.equals("exit")) {
                     massage = dataInputStream.readUTF();
-                    txtChat.appendText("\n Server : " + massage);
+                    txtChat.appendText(massage);
                 }
 
                 /*close streams*/
