@@ -31,7 +31,11 @@ public class Client2Controller {
     final int Port = 6001;
 
 
-    public void btnSendOnAction(ActionEvent actionEvent) {
+    public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
+        dataOutputStream.writeUTF(txtMsgField.getText().trim());
+        dataOutputStream.flush();
+        txtChat.appendText("\n Client 2 : " + txtMsgField.getText().trim());
+        txtMsgField.clear();
     }
 
     public void initialize() {

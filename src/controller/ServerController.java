@@ -22,7 +22,7 @@ public class ServerController {
     public TextArea txtChat;
     public TextField txtMsgField;
 
-    ServerSocket serverSocket;
+    ServerSocket serverSocket, serverSocket2, serverSocket3;
 
     /*data input streams for catch data*/
     DataInputStream dataInputStream1, dataInputStream2, dataInputStream3;
@@ -41,10 +41,10 @@ public class ServerController {
     final int Port3 = 6002;
 
     /*get massage from clients*/
-    String massage1="", massage2="", massage3="";
+    String massage1 = "", massage2 = "", massage3 = "";
 
     /*store client's massages separately*/
-    String chat1="", chat2="", chat3="";
+    String chat1 = "server connected", chat2 = "server connected", chat3 = "";
 
     public void txtMsg(ActionEvent actionEvent) {
     }
@@ -63,9 +63,9 @@ public class ServerController {
 
                 /*accept client req and server start*/
                 serverSocket = new ServerSocket(Port1);
-                txtChat.appendText("Server is started...\n");
+                txtChat.appendText("Server is started..");
                 localSocket1 = serverSocket.accept();
-                txtChat.appendText("Client 1  accepted");
+                txtChat.appendText("\n Client 1  accepted");
 
                 /* accepting input and output streams */
                 dataInputStream1 = new DataInputStream(localSocket1.getInputStream());
@@ -94,6 +94,42 @@ public class ServerController {
                 e.printStackTrace();
             }
 
+        }).start();
+
+
+        /*client 2 data transfer*/
+
+        new Thread(() -> {
+            try {
+                serverSocket2 = new ServerSocket(Port2);
+                localSocket2 = serverSocket2.accept();
+                txtChat.appendText("\n Client 2 accepted");
+
+                dataInputStream2 = new DataInputStream(localSocket2.getInputStream());
+                dataOutputStream2 = new DataOutputStream(localSocket2.getOutputStream());
+
+                while (!massage2.equals("exit")) {
+
+                    /*get client 2 massage to server*/
+                    massage2 = dataInputStream2.readUTF();
+                    txtChat.appendText("\n Client 2 : " + massage2.trim());
+
+                    /*store massage to another variable*/
+                    chat2 = massage2;
+
+                    /*send massage to client 1*/
+                    dataOutputStream1.writeUTF("\n client 2 : " + chat2.trim());
+                    dataOutputStream1.flush();
+
+                    /*send massage to client 3*/
+                    dataOutputStream3.writeUTF("\n client 2 : " + chat2.trim());
+                    dataOutputStream3.flush();
+
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }).start();
     }
 }
