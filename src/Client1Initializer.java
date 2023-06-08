@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 
-public class ServerInitializer extends Application {
+public class Client1Initializer extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -15,12 +15,12 @@ public class ServerInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        URL resource = getClass().getResource("/view/Server.fxml");
+        URL resource = getClass().getResource("/view/Client1.fxml");
         Parent load = FXMLLoader.load(resource);
         Scene scene = new Scene(load);
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
-        primaryStage.setTitle("Server");
+        primaryStage.setTitle("Client 1");
         primaryStage.centerOnScreen();
         primaryStage.show();
     }
