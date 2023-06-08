@@ -41,10 +41,10 @@ public class ServerController {
     final int Port3 = 6002;
 
     /*get massage from clients*/
-    String massage1, massage2, massage3;
+    String massage1="", massage2="", massage3="";
 
     /*store client's massages separately*/
-    String chat1, chat2, chat3;
+    String chat1="", chat2="", chat3="";
 
     public void txtMsg(ActionEvent actionEvent) {
     }
@@ -71,7 +71,7 @@ public class ServerController {
                 dataInputStream1 = new DataInputStream(localSocket1.getInputStream());
                 dataOutputStream1 = new DataOutputStream(localSocket1.getOutputStream());
 
-                while (!massage1.equalsIgnoreCase("exit")) {
+                while (!massage1.equals("exit")) {
 
                     /*get client 1 massage to server*/
                     massage1 = dataInputStream1.readUTF();
@@ -89,7 +89,6 @@ public class ServerController {
                     dataOutputStream3.flush();
 
                 }
-
 
             } catch (IOException e) {
                 e.printStackTrace();
