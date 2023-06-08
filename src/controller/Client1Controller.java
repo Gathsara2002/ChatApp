@@ -17,4 +17,6 @@ public class Client1Controller {
 
     public void btnSendOnAction(ActionEvent actionEvent) {
     }
+
+
 }
