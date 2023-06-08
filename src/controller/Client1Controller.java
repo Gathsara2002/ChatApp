@@ -18,7 +18,7 @@ import java.net.Socket;
 public class Client1Controller {
 
     /*remote socket for client 1*/
-    Socket socket;
+    Socket socket1;
 
     /*dataInputStream and dataOutputStream for streaming data */
     DataInputStream dataInputStream;
@@ -43,9 +43,9 @@ public class Client1Controller {
         new Thread(() -> {
             try {
 
-                socket = new Socket("localhost", Port);
-                dataOutputStream = new DataOutputStream(socket.getOutputStream());
-                dataInputStream = new DataInputStream(socket.getInputStream());
+                socket1 = new Socket("localhost", Port);
+                dataOutputStream = new DataOutputStream(socket1.getOutputStream());
+                dataInputStream = new DataInputStream(socket1.getInputStream());
 
                 /*get massages from server*/
                 while (!massage.equals("exit")) {
@@ -58,7 +58,7 @@ public class Client1Controller {
                 dataInputStream.close();
 
                 /*close socket*/
-                socket.close();
+                socket1.close();
 
                 txtMsgField.clear();
 
