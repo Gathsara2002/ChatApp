@@ -49,7 +49,15 @@ public class ServerController {
     public void txtMsg(ActionEvent actionEvent) {
     }
 
-    public void btnSendOnAction(ActionEvent actionEvent) {
+    public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
+        dataOutputStream1.writeUTF("\n Server : " + txtMsgField.getText().trim());
+        dataOutputStream1.flush();
+        dataOutputStream2.writeUTF("\n Server : " + txtMsgField.getText().trim());
+        dataOutputStream2.flush();
+        dataOutputStream3.writeUTF("\n Server : " + txtMsgField.getText().trim());
+        dataOutputStream3.flush();
+        txtChat.appendText("\n Server : " + txtMsgField.getText().trim());
+        txtMsgField.clear();
     }
 
     public void initialize() {
@@ -63,7 +71,7 @@ public class ServerController {
 
                 /*accept client req and server start*/
                 serverSocket = new ServerSocket(Port1);
-                txtChat.appendText("Server is started..");
+                txtChat.appendText("\n * Server is started..");
                 localSocket1 = serverSocket.accept();
                 txtChat.appendText("\n Client 1  accepted");
 
@@ -96,7 +104,6 @@ public class ServerController {
 
         }).start();
 
-
         /*client 2 data transfer*/
 
         new Thread(() -> {
@@ -104,7 +111,7 @@ public class ServerController {
 
                 serverSocket2 = new ServerSocket(Port2);
                 localSocket2 = serverSocket2.accept();
-                txtChat.appendText("\n Client 2 accepted");
+                txtChat.appendText("\n Client 2  accepted");
 
                 dataInputStream2 = new DataInputStream(localSocket2.getInputStream());
                 dataOutputStream2 = new DataOutputStream(localSocket2.getOutputStream());
@@ -140,7 +147,7 @@ public class ServerController {
 
                 serverSocket3 = new ServerSocket(Port3);
                 localSocket3 = serverSocket3.accept();
-                txtChat.appendText("\n Client 3 accepted");
+                txtChat.appendText("\n Client 3  accepted");
 
                 dataInputStream3 = new DataInputStream(localSocket3.getInputStream());
                 dataOutputStream3 = new DataOutputStream(localSocket3.getOutputStream());
