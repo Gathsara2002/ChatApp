@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="client2AP" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Client2Controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00cec9" height="60.0" layoutY="13.0" strokeType="INSIDE" width="700.0" />
+      <Label layoutX="296.0" layoutY="20.0" text="Client 2">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00cec9" height="80.0" layoutY="520.0" strokeType="INSIDE" width="700.0" />
+      <TextField fx:id="txtMsgField" layoutX="43.0" layoutY="542.0" prefHeight="35.0" prefWidth="400.0" />
+      <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="542.0" onAction="#btnSendOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #6D214F;" text="Send" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="402.0" fitWidth="449.0" layoutX="159.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/img.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="txtChat" layoutX="35.0" layoutY="82.0" opacity="0.75" prefHeight="426.0" prefWidth="634.0" />
+   </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>
