@@ -83,21 +83,33 @@ public class Client1Controller {
     }
 
     public void smileEmkOnAction(MouseEvent mouseEvent) {
+        txtMsgField.appendText("\uD83D\uDE0A");
+        emojiPane.setVisible(false);
     }
 
     public void cryEmjOnAction(MouseEvent mouseEvent) {
+        txtMsgField.appendText("\uD83D\uDE22");
+        emojiPane.setVisible(false);
     }
 
     public void laughEmjOnAction(MouseEvent mouseEvent) {
+        txtMsgField.appendText("\uD83E\uDD23");
+        emojiPane.setVisible(false);
     }
 
     public void upEmjOnAction(MouseEvent mouseEvent) {
+        txtMsgField.appendText("\uD83D\uDC4D");
+        emojiPane.setVisible(false);
     }
 
     public void bossEmjOnAction(MouseEvent mouseEvent) {
+        txtMsgField.appendText("\uD83D\uDE0E");
+        emojiPane.setVisible(false);
     }
 
     public void angryEmjOnAction(MouseEvent mouseEvent) {
+        txtMsgField.appendText("\uD83D\uDE21");
+        emojiPane.setVisible(false);
     }
 }
 
