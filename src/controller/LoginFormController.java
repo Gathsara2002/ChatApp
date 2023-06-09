@@ -31,7 +31,7 @@ public class LoginFormController {
 
         /*check client 1*/
         if (userName.equalsIgnoreCase(client1)) {
-            runServer();
+            // runServer();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Client1.fxml"));
             Parent parent = fxmlLoader.load();
             Scene scene = new Scene(parent);
@@ -42,7 +42,7 @@ public class LoginFormController {
 
             /*check client 2*/
         } else if (userName.equalsIgnoreCase(client2)) {
-            runServer();
+            // runServer();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Client2.fxml"));
             Parent parent = fxmlLoader.load();
             Scene scene = new Scene(parent);
@@ -53,7 +53,7 @@ public class LoginFormController {
 
             /*check client 3*/
         } else if (userName.equalsIgnoreCase(client3)) {
-            runServer();
+            //runServer();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Client3.fxml"));
             Parent parent = fxmlLoader.load();
             Scene scene = new Scene(parent);
@@ -74,4 +74,6 @@ public class LoginFormController {
         stage.show();
     }
 }
+
+
 
