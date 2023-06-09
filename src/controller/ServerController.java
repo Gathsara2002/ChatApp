@@ -50,14 +50,21 @@ public class ServerController {
     }
 
     public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
-        dataOutputStream1.writeUTF("\n Server : " + txtMsgField.getText().trim());
-        dataOutputStream1.flush();
-        dataOutputStream2.writeUTF("\n Server : " + txtMsgField.getText().trim());
-        dataOutputStream2.flush();
-        dataOutputStream3.writeUTF("\n Server : " + txtMsgField.getText().trim());
-        dataOutputStream3.flush();
+
+        String reply = txtMsgField.getText().trim();
         txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         txtChat.appendText("\n Server : " + txtMsgField.getText().trim());
+
+        dataOutputStream1.writeUTF("\n Server : " + reply);
+        dataOutputStream1.flush();
+
+        dataOutputStream2.writeUTF("\n Server : " + reply);
+        dataOutputStream2.flush();
+
+        dataOutputStream3.writeUTF("\n Server : " + reply);
+        dataOutputStream3.flush();
+
+
         txtMsgField.clear();
     }
 
