@@ -68,12 +68,15 @@ public class Client2Controller {
                 e.printStackTrace();
             }
         }).start();
+
+        emojiPane.setVisible(false);
     }
 
     public void cameraOnAction(MouseEvent mouseEvent) {
     }
 
     public void emojiOnAction(MouseEvent mouseEvent) {
+        emojiPane.setVisible(true);
     }
 
     public void smileEmkOnAction(MouseEvent mouseEvent) {

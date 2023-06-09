@@ -8,6 +8,7 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.DataInputStream;
@@ -19,6 +20,7 @@ public class Client3Controller {
     public AnchorPane client3AP;
     public TextField txtMsgField;
     public TextArea txtChat;
+    public AnchorPane emojiPane;
 
     /*remote socket for client 3*/
     Socket socket3;
@@ -64,6 +66,33 @@ public class Client3Controller {
                 e.printStackTrace();
             }
         }).start();
+
+        emojiPane.setVisible(false);
+    }
+
+    public void cryOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void angryEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void bossEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void laughEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void upEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void smileEmkOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void cameraOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void emojiOnAction(MouseEvent mouseEvent) {
+        emojiPane.setVisible(true);
     }
 }
 
