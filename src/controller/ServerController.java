@@ -22,7 +22,7 @@ public class ServerController {
     public TextArea txtChat;
     public TextField txtMsgField;
 
-    ServerSocket serverSocket, serverSocket2, serverSocket3;
+    ServerSocket serverSocket,serverSocket2,serverSocket3;
 
     /*data input streams for catch data*/
     DataInputStream dataInputStream1, dataInputStream2, dataInputStream3;
@@ -52,8 +52,10 @@ public class ServerController {
     public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
         dataOutputStream1.writeUTF("\n Server : " + txtMsgField.getText().trim());
         dataOutputStream1.flush();
+        txtMsgField.clear();
         dataOutputStream2.writeUTF("\n Server : " + txtMsgField.getText().trim());
         dataOutputStream2.flush();
+        txtMsgField.clear();
         dataOutputStream3.writeUTF("\n Server : " + txtMsgField.getText().trim());
         dataOutputStream3.flush();
         txtChat.appendText("\n Server : " + txtMsgField.getText().trim());

@@ -8,6 +8,7 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.DataInputStream;
@@ -67,6 +68,30 @@ public class Client1Controller {
             }
 
         }).start();
+    }
+
+    public void cameraOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void emojiOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void smileEmkOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void cryEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void laughEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void upEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void bossEmjOnAction(MouseEvent mouseEvent) {
+    }
+
+    public void angryEmjOnAction(MouseEvent mouseEvent) {
     }
 }
 
