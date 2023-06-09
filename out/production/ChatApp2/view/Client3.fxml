@@ -23,7 +23,7 @@
         </Label>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00cec9" height="80.0" layoutY="520.0" strokeType="INSIDE"
                    width="700.0"/>
-        <TextField fx:id="txtMsgField" layoutX="43.0" layoutY="542.0" prefHeight="35.0" prefWidth="400.0"/>
+        <TextField fx:id="txtMsgField" layoutX="82.0" layoutY="542.0" prefHeight="35.0" prefWidth="400.0"/>
         <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="542.0" onAction="#btnSendOnAction" prefHeight="35.0"
                    prefWidth="100.0" style="-fx-background-color: #6D214F;" text="Send" textFill="WHITE">
             <font>
@@ -47,7 +47,7 @@
                 <Image url="@../assets/smiling.png"/>
             </image>
         </ImageView>
-        <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="404.0" layoutY="542.0" onMouseClicked="#cameraOnAction"
+        <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="442.0" layoutY="542.0" onMouseClicked="#cameraOnAction"
                    pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@../assets/camera.png"/>

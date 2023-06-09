@@ -22,7 +22,7 @@ public class ServerController {
     public TextArea txtChat;
     public TextField txtMsgField;
 
-    ServerSocket serverSocket,serverSocket2,serverSocket3;
+    ServerSocket serverSocket, serverSocket2, serverSocket3;
 
     /*data input streams for catch data*/
     DataInputStream dataInputStream1, dataInputStream2, dataInputStream3;
@@ -52,12 +52,11 @@ public class ServerController {
     public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
         dataOutputStream1.writeUTF("\n Server : " + txtMsgField.getText().trim());
         dataOutputStream1.flush();
-        txtMsgField.clear();
         dataOutputStream2.writeUTF("\n Server : " + txtMsgField.getText().trim());
         dataOutputStream2.flush();
-        txtMsgField.clear();
         dataOutputStream3.writeUTF("\n Server : " + txtMsgField.getText().trim());
         dataOutputStream3.flush();
+        txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         txtChat.appendText("\n Server : " + txtMsgField.getText().trim());
         txtMsgField.clear();
     }
@@ -73,6 +72,7 @@ public class ServerController {
 
                 /*accept client req and server start*/
                 serverSocket = new ServerSocket(Port1);
+                txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                 txtChat.appendText("\n * Server is started..");
                 localSocket1 = serverSocket.accept();
                 txtChat.appendText("\n Client 1  accepted");
@@ -113,6 +113,7 @@ public class ServerController {
 
                 serverSocket2 = new ServerSocket(Port2);
                 localSocket2 = serverSocket2.accept();
+                txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                 txtChat.appendText("\n Client 2  accepted");
 
                 dataInputStream2 = new DataInputStream(localSocket2.getInputStream());
@@ -149,6 +150,7 @@ public class ServerController {
 
                 serverSocket3 = new ServerSocket(Port3);
                 localSocket3 = serverSocket3.accept();
+                txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                 txtChat.appendText("\n Client 3  accepted");
 
                 dataInputStream3 = new DataInputStream(localSocket3.getInputStream());

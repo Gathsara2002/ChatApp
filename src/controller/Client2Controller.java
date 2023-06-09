@@ -36,6 +36,7 @@ public class Client2Controller {
     public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
         dataOutputStream.writeUTF(txtMsgField.getText().trim());
         dataOutputStream.flush();
+        txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         txtChat.appendText("\n Client 2 : " + txtMsgField.getText().trim());
         txtMsgField.clear();
     }
@@ -53,6 +54,7 @@ public class Client2Controller {
                 /*get massages from server*/
                 while (!massage.equals("exit")) {
                     massage = dataInputStream.readUTF();
+                    txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                     txtChat.appendText(massage);
                 }
 

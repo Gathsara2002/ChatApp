@@ -6,10 +6,13 @@
 package controller;
 
 import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -36,6 +39,7 @@ public class Client1Controller {
     public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
         dataOutputStream.writeUTF(txtMsgField.getText().trim());
         dataOutputStream.flush();
+        txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         txtChat.appendText("\n Client 1 : " + txtMsgField.getText().trim());
         txtMsgField.clear();
         emojiPane.setVisible(false);
@@ -53,6 +57,7 @@ public class Client1Controller {
                 /*get massages from server*/
                 while (!massage.equals("exit")) {
                     massage = dataInputStream.readUTF();
+                    txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                     txtChat.appendText(massage);
                 }
 
