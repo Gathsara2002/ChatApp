@@ -11,80 +11,94 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="client1AP" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Client1Controller">
+<AnchorPane fx:id="client1AP" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Client1Controller">
     <children>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00cec9" height="60.0" layoutY="13.0" strokeType="INSIDE" width="700.0" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00cec9" height="60.0" layoutY="13.0" strokeType="INSIDE"
+                   width="700.0"/>
         <Label layoutX="296.0" layoutY="20.0" text="Client 1">
             <font>
-                <Font name="System Bold" size="30.0" />
+                <Font name="System Bold" size="30.0"/>
             </font>
         </Label>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00cec9" height="80.0" layoutY="520.0" strokeType="INSIDE" width="700.0" />
-        <TextField fx:id="txtMsgField" layoutX="86.0" layoutY="542.0" prefHeight="35.0" prefWidth="400.0" />
-        <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="542.0" onAction="#btnSendOnAction" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #6D214F;" text="Send" textFill="WHITE">
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00cec9" height="80.0" layoutY="520.0" strokeType="INSIDE"
+                   width="700.0"/>
+        <TextField fx:id="txtMsgField" layoutX="86.0" layoutY="542.0" prefHeight="35.0" prefWidth="400.0"/>
+        <JFXButton buttonType="RAISED" layoutX="548.0" layoutY="542.0" onAction="#btnSendOnAction" prefHeight="35.0"
+                   prefWidth="100.0" style="-fx-background-color: #6D214F;" text="Send" textFill="WHITE">
             <font>
-                <Font size="15.0" />
+                <Font size="15.0"/>
             </font>
         </JFXButton>
-        <ImageView fitHeight="402.0" fitWidth="449.0" layoutX="159.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="402.0" fitWidth="449.0" layoutX="159.0" layoutY="93.0" pickOnBounds="true"
+                   preserveRatio="true">
             <image>
-                <Image url="@/assets/img.png" />
+                <Image url="@/assets/img.png"/>
             </image>
         </ImageView>
         <TextArea fx:id="txtChat" layoutX="35.0" layoutY="82.0" opacity="0.75" prefHeight="426.0" prefWidth="634.0">
             <font>
-                <Font size="14.0" />
+                <Font size="14.0"/>
             </font>
         </TextArea>
-        <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="444.0" layoutY="542.0" onMouseClicked="#cameraOnAction" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="35.0" fitWidth="45.0" layoutX="444.0" layoutY="542.0" onMouseClicked="#cameraOnAction"
+                   pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../assets/camera.png" />
+                <Image url="@../assets/camera.png"/>
             </image>
         </ImageView>
-        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="47.0" layoutY="545.0" onMouseClicked="#emojiOnAction" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="47.0" layoutY="545.0" onMouseClicked="#emojiOnAction"
+                   pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../assets/smiling.png" />
+                <Image url="@../assets/smiling.png"/>
             </image>
         </ImageView>
-        <AnchorPane fx:id="emojiPane" layoutX="43.0" layoutY="455.0" prefHeight="80.0" prefWidth="120.0" style="-fx-border-color: black;">
+        <AnchorPane fx:id="emojiPane" layoutX="43.0" layoutY="455.0" prefHeight="80.0" prefWidth="120.0"
+                    style="-fx-border-color: black;">
             <cursor>
-                <Cursor fx:constant="HAND" />
+                <Cursor fx:constant="HAND"/>
             </cursor>
             <children>
-                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="4.0" layoutY="5.0" onMouseClicked="#smileEmkOnAction" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="4.0" layoutY="5.0"
+                           onMouseClicked="#smileEmkOnAction" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../assets/smiling.png" />
+                        <Image url="@../assets/smiling.png"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="44.0" layoutY="4.0" onMouseClicked="#cryEmjOnAction" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="44.0" layoutY="4.0"
+                           onMouseClicked="#cryEmjOnAction" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../assets/emoji (1).png" />
+                        <Image url="@../assets/emoji (1).png"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="85.0" layoutY="4.0" onMouseClicked="#laughEmjOnAction" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="85.0" layoutY="4.0"
+                           onMouseClicked="#laughEmjOnAction" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../assets/emoji.png" />
+                        <Image url="@../assets/emoji.png"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="4.0" layoutY="44.0" onMouseClicked="#upEmjOnAction" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="4.0" layoutY="44.0" onMouseClicked="#upEmjOnAction"
+                           pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../assets/like.png" />
+                        <Image url="@../assets/like.png"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="43.0" layoutY="45.0" onMouseClicked="#bossEmjOnAction" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="43.0" layoutY="45.0"
+                           onMouseClicked="#bossEmjOnAction" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../assets/cool.png" />
+                        <Image url="@../assets/cool.png"/>
                     </image>
                 </ImageView>
-                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="85.0" layoutY="45.0" onMouseClicked="#angryEmjOnAction" pickOnBounds="true" preserveRatio="true">
+                <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="85.0" layoutY="45.0"
+                           onMouseClicked="#angryEmjOnAction" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../assets/angry.png" />
+                        <Image url="@../assets/angry.png"/>
                     </image>
                 </ImageView>
             </children>
         </AnchorPane>
     </children>
     <cursor>
-        <Cursor fx:constant="HAND" />
+        <Cursor fx:constant="HAND"/>
     </cursor>
 </AnchorPane>
