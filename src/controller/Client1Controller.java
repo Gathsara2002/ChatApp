@@ -31,12 +31,14 @@ public class Client1Controller {
     public AnchorPane client1AP;
     public TextField txtMsgField;
     public TextArea txtChat;
+    public AnchorPane emojiPane;
 
     public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
         dataOutputStream.writeUTF(txtMsgField.getText().trim());
         dataOutputStream.flush();
         txtChat.appendText("\n Client 1 : " + txtMsgField.getText().trim());
         txtMsgField.clear();
+        emojiPane.setVisible(false);
     }
 
     public void initialize() {
@@ -68,12 +70,16 @@ public class Client1Controller {
             }
 
         }).start();
+
+        emojiPane.setVisible(false);
+
     }
 
     public void cameraOnAction(MouseEvent mouseEvent) {
     }
 
     public void emojiOnAction(MouseEvent mouseEvent) {
+        emojiPane.setVisible(true);
     }
 
     public void smileEmkOnAction(MouseEvent mouseEvent) {
