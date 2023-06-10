@@ -38,6 +38,7 @@ public class Client3Controller {
         txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         txtChat.appendText("\n Client 3 : " + txtMsgField.getText().trim());
         txtMsgField.clear();
+        emojiPane.setVisible(false);
     }
 
     public void initialize() {

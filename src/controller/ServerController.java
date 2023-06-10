@@ -46,6 +46,12 @@ public class ServerController {
     /*store client's massages separately*/
     String chat1 = "server connected", chat2 = "server connected", chat3 = "server connected";
 
+    /*status of sockets*/
+    boolean isSocket1IsConnected = false;
+    boolean isSocket2IsConnected = false;
+    boolean isSocket3IsConnected = false;
+
+
     public void txtMsg(ActionEvent actionEvent) {
     }
 
@@ -55,15 +61,20 @@ public class ServerController {
         txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         txtChat.appendText("\n Server : " + txtMsgField.getText().trim());
 
-        dataOutputStream1.writeUTF("\n Server : " + reply);
-        dataOutputStream1.flush();
+        if (isSocket1IsConnected) {
+            dataOutputStream1.writeUTF("\n Server : " + reply);
+            dataOutputStream1.flush();
+        }
 
-        dataOutputStream2.writeUTF("\n Server : " + reply);
-        dataOutputStream2.flush();
+        if (isSocket2IsConnected) {
+            dataOutputStream2.writeUTF("\n Server : " + reply);
+            dataOutputStream2.flush();
+        }
 
-        dataOutputStream3.writeUTF("\n Server : " + reply);
-        dataOutputStream3.flush();
-
+        if (isSocket3IsConnected) {
+            dataOutputStream3.writeUTF("\n Server : " + reply);
+            dataOutputStream3.flush();
+        }
 
         txtMsgField.clear();
     }
@@ -82,6 +93,7 @@ public class ServerController {
                 txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                 txtChat.appendText("\n * Server is started..");
                 localSocket1 = serverSocket.accept();
+                isSocket1IsConnected = true;
                 txtChat.appendText("\n Client 1  accepted");
 
                 /* accepting input and output streams */
@@ -97,15 +109,28 @@ public class ServerController {
                     /*store massage to another variable*/
                     chat1 = massage1;
 
-                    /*send massage to client 2*/
-                    dataOutputStream2.writeUTF("\n client 1 : " + chat1.trim());
-                    dataOutputStream2.flush();
+                    if (isSocket2IsConnected) {
+                        /*send massage to client 2*/
+                        dataOutputStream2.writeUTF("\n client 1 : " + chat1.trim());
+                        dataOutputStream2.flush();
+                    }
 
-                    /*send massage to client 3*/
-                    dataOutputStream3.writeUTF("\n client 1 : " + chat1.trim());
-                    dataOutputStream3.flush();
+                    if (isSocket3IsConnected) {
+                        /*send massage to client 3*/
+                        dataOutputStream3.writeUTF("\n client 1 : " + chat1.trim());
+                        dataOutputStream3.flush();
+                    }
+
 
                 }
+
+                localSocket1.close();
+                dataInputStream1.close();
+                dataInputStream2.close();
+                dataInputStream3.close();
+                dataOutputStream1.close();
+                dataOutputStream2.close();
+                dataOutputStream3.close();
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -120,6 +145,7 @@ public class ServerController {
 
                 serverSocket2 = new ServerSocket(Port2);
                 localSocket2 = serverSocket2.accept();
+                isSocket2IsConnected = true;
                 txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                 txtChat.appendText("\n Client 2  accepted");
 
@@ -135,15 +161,27 @@ public class ServerController {
                     /*store massage to another variable*/
                     chat2 = massage2;
 
-                    /*send massage to client 1*/
-                    dataOutputStream1.writeUTF("\n client 2 : " + chat2.trim());
-                    dataOutputStream1.flush();
+                    if (isSocket1IsConnected) {
+                        /*send massage to client 1*/
+                        dataOutputStream1.writeUTF("\n client 2 : " + chat2.trim());
+                        dataOutputStream1.flush();
+                    }
 
-                    /*send massage to client 3*/
-                    dataOutputStream3.writeUTF("\n client 2 : " + chat2.trim());
-                    dataOutputStream3.flush();
+                    if (isSocket3IsConnected) {
+                        /*send massage to client 3*/
+                        dataOutputStream3.writeUTF("\n client 2 : " + chat2.trim());
+                        dataOutputStream3.flush();
+                    }
 
                 }
+
+                localSocket2.close();
+                dataInputStream1.close();
+                dataInputStream2.close();
+                dataInputStream3.close();
+                dataOutputStream1.close();
+                dataOutputStream2.close();
+                dataOutputStream3.close();
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -157,6 +195,7 @@ public class ServerController {
 
                 serverSocket3 = new ServerSocket(Port3);
                 localSocket3 = serverSocket3.accept();
+                isSocket3IsConnected = true;
                 txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
                 txtChat.appendText("\n Client 3  accepted");
 
@@ -172,20 +211,32 @@ public class ServerController {
                     /*store massage to another variable*/
                     chat3 = massage3;
 
-                    /*send massage to client 1*/
-                    dataOutputStream1.writeUTF("\n client 3 : " + chat3.trim());
-                    dataOutputStream1.flush();
+                    if (isSocket1IsConnected) {
+                        /*send massage to client 1*/
+                        dataOutputStream1.writeUTF("\n client 3 : " + chat3.trim());
+                        dataOutputStream1.flush();
+                    }
 
-                    /*send massage to client 2*/
-                    dataOutputStream2.writeUTF("\n client 3 : " + chat3.trim());
-                    dataOutputStream2.flush();
-
+                    if (isSocket2IsConnected) {
+                        /*send massage to client 2*/
+                        dataOutputStream2.writeUTF("\n client 3 : " + chat3.trim());
+                        dataOutputStream2.flush();
+                    }
                 }
+
+                localSocket3.close();
+                dataInputStream1.close();
+                dataInputStream2.close();
+                dataInputStream3.close();
+                dataOutputStream1.close();
+                dataOutputStream2.close();
+                dataOutputStream3.close();
 
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }).start();
     }
+
 }
 

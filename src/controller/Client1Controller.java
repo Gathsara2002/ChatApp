@@ -34,12 +34,8 @@ public class Client1Controller {
     public AnchorPane emojiPane;
 
     public void btnSendOnAction(ActionEvent actionEvent) throws IOException {
-
-        if (socket1.isConnected()){
-            dataOutputStream.writeUTF(txtMsgField.getText().trim());
-            dataOutputStream.flush();
-        }
-
+        dataOutputStream.writeUTF(txtMsgField.getText().trim());
+        dataOutputStream.flush();
         txtChat.setStyle("-fx-font-size: 20px;" + "-fx-font-family : Cambria");
         txtChat.appendText("\n Client 1 : " + txtMsgField.getText().trim());
         txtMsgField.clear();
