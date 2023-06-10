@@ -21,17 +21,20 @@ public class LoginFormController {
     public TextField txtUserName;
     public JFXButton btnLogin;
 
-    private String client1 = "client1";
-    private String client2 = "client2";
-    private String client3 = "client3";
+    private final String client1 = "client1";
+    private final String client2 = "client2";
+    private final String client3 = "client3";
     String userName = "";
+
+    public void initialize(){
+        txtUserName.requestFocus();
+    }
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
         userName = txtUserName.getText();
 
         /*check client 1*/
         if (userName.equalsIgnoreCase(client1)) {
-            // runServer();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Client1.fxml"));
             Parent parent = fxmlLoader.load();
             Scene scene = new Scene(parent);
@@ -42,7 +45,6 @@ public class LoginFormController {
 
             /*check client 2*/
         } else if (userName.equalsIgnoreCase(client2)) {
-            // runServer();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Client2.fxml"));
             Parent parent = fxmlLoader.load();
             Scene scene = new Scene(parent);
@@ -53,7 +55,6 @@ public class LoginFormController {
 
             /*check client 3*/
         } else if (userName.equalsIgnoreCase(client3)) {
-            //runServer();
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Client3.fxml"));
             Parent parent = fxmlLoader.load();
             Scene scene = new Scene(parent);
@@ -64,15 +65,6 @@ public class LoginFormController {
         }
     }
 
-    /*run server parallel because without server client will not run*/
-    private void runServer() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/Server.fxml"));
-        Parent parent = fxmlLoader.load();
-        Scene scene = new Scene(parent);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-    }
 }
 
 
